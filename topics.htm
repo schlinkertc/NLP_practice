@@ -1,0 +1,41 @@
+
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/bmabey/pyLDAvis/files/ldavis.v1.0.0.css">
+
+
+<div id="ldavis_el80421123979514084011808427"></div>
+<script type="text/javascript">
+
+var ldavis_el80421123979514084011808427_data = {"mdsDat": {"x": [-60.31231689453125, 60.31256103515625], "y": [141.36962890625, -141.369140625], "topics": [1, 2], "cluster": [1, 1], "Freq": [53.65719459379795, 46.34280540620204]}, "tinfo": {"Category": ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2"], "Freq": [60.0, 23.0, 41.0, 29.0, 35.0, 17.0, 20.0, 14.0, 23.006886551718146, 17.37108112372629, 27.25305908338287, 31.450415716660153, 13.131646891175606, 8.372075045359356, 8.42345346964132, 0.8417930353273124, 59.209486946500164, 33.10313433433281, 6.110150353375261, 7.05175508951358, 3.570335039002507, 2.0299649806754463, 0.5331779540196803, 0.5415843855895048], "Term": ["say", "know", "win", "love", "leave", "sleep", "tell", "man", "know", "sleep", "love", "leave", "tell", "man", "win", "say", "say", "win", "man", "tell", "leave", "love", "sleep", "know"], "Total": [60.0, 23.0, 41.0, 29.0, 35.0, 17.0, 20.0, 14.0, 23.548470937307652, 17.904259077745973, 29.283024064058317, 35.02075075566266, 20.183401980689187, 14.482225398734617, 41.526587803974124, 60.05127998182748, 60.05127998182748, 41.526587803974124, 14.482225398734617, 20.183401980689187, 35.02075075566266, 29.283024064058317, 17.904259077745973, 23.548470937307652], "loglift": [8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0, 0.5993, 0.5923, 0.5507, 0.515, 0.1927, 0.0745, -0.9728, -3.6449, 0.755, 0.5424, -0.0939, -0.2825, -1.5142, -1.8999, -2.7448, -3.0032], "logprob": [8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0, -1.7306, -2.0116, -1.5612, -1.418, -2.2914, -2.7415, -2.7354, -5.0386, -0.6388, -1.2202, -2.9099, -2.7666, -3.4472, -4.0118, -5.3487, -5.3331]}, "token.table": {"Topic": [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2], "Freq": [0.9767088513403767, 0.04246560223219029, 0.8851894756992744, 0.11421799686442251, 0.9220359188632954, 0.06829895695283669, 0.5524012905294927, 0.41430096789711957, 0.016652434391117337, 0.9824936290759229, 0.9494947501698119, 0.055852632362930116, 0.6440935979196158, 0.34681962964902396, 0.19264766076528914, 0.7946716006568176], "Term": ["know", "know", "leave", "leave", "love", "love", "man", "man", "say", "say", "sleep", "sleep", "tell", "tell", "win", "win"]}, "R": 8, "lambda.step": 0.01, "plot.opts": {"xlab": "PC1", "ylab": "PC2"}, "topic.order": [1, 2]};
+
+function LDAvis_load_lib(url, callback){
+  var s = document.createElement('script');
+  s.src = url;
+  s.async = true;
+  s.onreadystatechange = s.onload = callback;
+  s.onerror = function(){console.warn("failed to load library " + url);};
+  document.getElementsByTagName("head")[0].appendChild(s);
+}
+
+if(typeof(LDAvis) !== "undefined"){
+   // already loaded: just create the visualization
+   !function(LDAvis){
+       new LDAvis("#" + "ldavis_el80421123979514084011808427", ldavis_el80421123979514084011808427_data);
+   }(LDAvis);
+}else if(typeof define === "function" && define.amd){
+   // require.js is available: use it to load d3/LDAvis
+   require.config({paths: {d3: "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min"}});
+   require(["d3"], function(d3){
+      window.d3 = d3;
+      LDAvis_load_lib("https://cdn.rawgit.com/bmabey/pyLDAvis/files/ldavis.v1.0.0.js", function(){
+        new LDAvis("#" + "ldavis_el80421123979514084011808427", ldavis_el80421123979514084011808427_data);
+      });
+    });
+}else{
+    // require.js not available: dynamically load d3 & LDAvis
+    LDAvis_load_lib("https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js", function(){
+         LDAvis_load_lib("https://cdn.rawgit.com/bmabey/pyLDAvis/files/ldavis.v1.0.0.js", function(){
+                 new LDAvis("#" + "ldavis_el80421123979514084011808427", ldavis_el80421123979514084011808427_data);
+            })
+         });
+}
+</script>
