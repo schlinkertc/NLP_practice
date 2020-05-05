@@ -1,0 +1,41 @@
+
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/bmabey/pyLDAvis/files/ldavis.v1.0.0.css">
+
+
+<div id="ldavis_el804248085895043905303714"></div>
+<script type="text/javascript">
+
+var ldavis_el804248085895043905303714_data = {"mdsDat": {"x": [-60.31231689453125, 60.31256103515625], "y": [141.36962890625, -141.369140625], "topics": [1, 2], "cluster": [1, 1], "Freq": [50.68562728689952, 49.31437271310049]}, "tinfo": {"Category": ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2"], "Freq": [60.0, 27.0, 40.0, 41.0, 29.0, 18.0, 20.0, 14.0, 26.99753330389215, 17.502018974017844, 27.017105745444695, 37.05503572674514, 8.238689018639718, 4.470380628430626, 6.244790199827498, 0.7090834388581134, 59.72636549263478, 35.10973604031956, 16.146756834760698, 6.262785169504718, 3.91649135579955, 2.50699130970663, 0.55132711239841, 0.5449096490199055], "Term": ["say", "know", "leave", "win", "love", "sleep", "tell", "man", "know", "sleep", "love", "leave", "man", "tell", "win", "say", "say", "win", "tell", "man", "leave", "love", "sleep", "know"], "Total": [60.0, 27.0, 40.0, 41.0, 29.0, 18.0, 20.0, 14.0, 27.542442952912058, 18.053346086416255, 29.524097055151326, 40.97152708254469, 14.501474188144435, 20.617137463191323, 41.35452624014706, 60.43544893149289, 60.43544893149289, 41.35452624014706, 20.617137463191323, 14.501474188144435, 40.97152708254469, 29.524097055151326, 18.053346086416255, 27.542442952912058], "loglift": [8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0, 0.6595, 0.6485, 0.5908, 0.5791, 0.1141, -0.8491, -1.2109, -3.7658, 0.6952, 0.5433, 0.4626, -0.1327, -1.6407, -1.7592, -2.7818, -3.2159], "logprob": [8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0, -1.5581, -1.9915, -1.5574, -1.2415, -2.745, -3.3564, -3.0221, -5.1976, -0.7367, -1.268, -2.0447, -2.9918, -3.4612, -3.9074, -5.4219, -5.4336]}, "token.table": {"Topic": [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2], "Freq": [0.9803051982774569, 0.036307599936202105, 0.9030661689874698, 0.09762877502567241, 0.9145072226786043, 0.10161191363095604, 0.5516680508620521, 0.4137510381465391, 0.01654658015585453, 0.9927948093512716, 0.9970450859269577, 0.05539139366260876, 0.19401335452806553, 0.7760534181122621, 0.14508689968197938, 0.8463402481448796], "Term": ["know", "know", "leave", "leave", "love", "love", "man", "man", "say", "say", "sleep", "sleep", "tell", "tell", "win", "win"]}, "R": 8, "lambda.step": 0.01, "plot.opts": {"xlab": "PC1", "ylab": "PC2"}, "topic.order": [1, 2]};
+
+function LDAvis_load_lib(url, callback){
+  var s = document.createElement('script');
+  s.src = url;
+  s.async = true;
+  s.onreadystatechange = s.onload = callback;
+  s.onerror = function(){console.warn("failed to load library " + url);};
+  document.getElementsByTagName("head")[0].appendChild(s);
+}
+
+if(typeof(LDAvis) !== "undefined"){
+   // already loaded: just create the visualization
+   !function(LDAvis){
+       new LDAvis("#" + "ldavis_el804248085895043905303714", ldavis_el804248085895043905303714_data);
+   }(LDAvis);
+}else if(typeof define === "function" && define.amd){
+   // require.js is available: use it to load d3/LDAvis
+   require.config({paths: {d3: "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min"}});
+   require(["d3"], function(d3){
+      window.d3 = d3;
+      LDAvis_load_lib("https://cdn.rawgit.com/bmabey/pyLDAvis/files/ldavis.v1.0.0.js", function(){
+        new LDAvis("#" + "ldavis_el804248085895043905303714", ldavis_el804248085895043905303714_data);
+      });
+    });
+}else{
+    // require.js not available: dynamically load d3 & LDAvis
+    LDAvis_load_lib("https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js", function(){
+         LDAvis_load_lib("https://cdn.rawgit.com/bmabey/pyLDAvis/files/ldavis.v1.0.0.js", function(){
+                 new LDAvis("#" + "ldavis_el804248085895043905303714", ldavis_el804248085895043905303714_data);
+            })
+         });
+}
+</script>
